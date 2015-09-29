@@ -25,7 +25,7 @@
 #define BUTTON_SPACE (BUTTON_RADIUS + 5)
 #define BUTTON_CENTER (BUTTON_RADIUS + 5)
 #define BUTTON_DIAMETER (2 * BUTTON_SPACE)
-#define TIME_FORMAT "%l:%M%p"
+#define TIME_FORMAT "%H:%M"
 
 /*******************************************************************************
  * Variables defined in i3lock.c.
@@ -151,8 +151,8 @@ xcb_pixmap_t draw_image(uint32_t *resolution) {
                   2 * M_PI /* end */);
 
         /* Use the appropriate color for the different PAM states
-         * (currently verifying, wrong password, or default) 
-         * Basic function so we don't have to use this code 
+         * (currently verifying, wrong password, or default)
+         * Basic function so we don't have to use this code
          * repeatedly for objects of the same color */
 
         void get_color(void) {
@@ -230,7 +230,7 @@ xcb_pixmap_t draw_image(uint32_t *resolution) {
                       BUTTON_CENTER /* y */,
                       BUTTON_RADIUS /* radius */,
                       highlight_start,
-                      highlight_start + (M_PI / 2.5)); 
+                      highlight_start + (M_PI / 2.5));
             cairo_set_operator(ctx,CAIRO_OPERATOR_CLEAR); /* Set newly drawn lines to erase what they're drawn over*/
             cairo_stroke(ctx);
 
